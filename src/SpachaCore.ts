@@ -1,5 +1,4 @@
-import { SpachaOptions, Theme, themes, ThemeName } from './define';
-import { Image } from 'canvas';
+import { SpachaOptions, Theme, themes } from './define';
 export class SpachaCore {
   protected options: SpachaOptions;
   protected scale = 1.0;
@@ -43,6 +42,6 @@ export class SpachaCore {
   };
 
   protected generatePriceString = (price: number): string => {
-    return '￥' + Number(this.options.price).toLocaleString();
+    return '￥' + Number(price).toLocaleString();
   };
 }
