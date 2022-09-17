@@ -2,8 +2,8 @@
   "name": "spacha",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.node.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/spacha.node.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "npx webpack --config webpack.config.js",
