@@ -7,11 +7,15 @@
         "strict": true,
         "lib":  ["es2018", "DOM"],
         "types": [
-            "node"
+            "node",
+            "jest"
         ],
+        "declaration": true,
+        "sourceMap": true,
         "outDir": "dist"
     },
     "include": [
-        "src"
+        "src",
+        "tests"
     ]
 }

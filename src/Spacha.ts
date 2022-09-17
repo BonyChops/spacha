@@ -32,7 +32,7 @@ export class Spacha extends SpachaCore {
         spcContainer.appendChild(this.upperDiv);
         spcContainer.appendChild(this.baseDiv);
 
-        if(this.options.shaddow){
+        if (this.options.shaddow) {
             spcContainer.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
             spcContainer.style.borderRadius = `${20 * this.scale}px`
         }
@@ -66,7 +66,7 @@ export class Spacha extends SpachaCore {
         style.backgroundColor = this.options.themeOption?.baseColor ?? themes.blue.baseColor;
         style.font = `${30 * this.scale}px 'sans-serif'`;
         style.padding = `${10 * this.scale}px`;
-        style.borderRadius =  `0px 0px ${r}px ${r}px`;
+        style.borderRadius = `0px 0px ${r}px ${r}px`;
         style.textOverflow = "ellipsis";
 
         style.color = this.options.themeOption?.txtColor ?? themes.blue.txtColor;
@@ -94,10 +94,15 @@ export class Spacha extends SpachaCore {
         const img = document.createElement("img");
         img.width = 110 * this.scale;
         img.height = 110 * this.scale;
-        img.src = String(this.options.user?.img?.src);
-        if(!this.options.imgOption?.square){
+        if (this.options.user?.img?.src) {
+            img.src = String(this.options.user?.img?.src);
+        }else{
+            img.style.backgroundColor = "black";
+        }
+        if (!this.options.imgOption?.square) {
             img.style.borderRadius = `${110 * this.scale / 2}px`
         }
+
 
         iconDiv.appendChild(img);
     }

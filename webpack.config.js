@@ -1,21 +1,37 @@
 const path = require('path');
 
-module.exports = {
-    mode: 'development',
-    entry: './src/index.ts',
-    target: "web",
+const baseConfig = {
+    mode: 'production',
     resolve: {
         extensions: [".ts", ".js"]
     },
     module: {
         rules: [
-            {test: /\.ts$/, loader: 'ts-loader'},
+            { test: /\.ts$/, loader: 'ts-loader' },
         ]
     },
+};
+
+const webConfig = {
+    target: "web",
+    entry: './src/index.ts',
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
-        libraryTarget: 'window',
+        libraryTarget: 'umd',
         globalObject: 'typeof self !== \'undefined\' ? self : this'
     }
 };
+
+const nodeConfig = {
+    target: "node",
+    entry: './src/index.node.ts',
+    output: {
+        filename: 'index.node.js',
+        libraryTarget: 'umd',
+        globalObject: 'typeof self !== \'undefined\' ? self : this',
+        path: path.resolve(__dirname, 'dist'),
+    }
+}
+
+module.exports = [{ ...baseConfig, ...webConfig }, { ...baseConfig, ...nodeConfig }];

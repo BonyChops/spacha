@@ -1,3 +1,4 @@
+import { Image } from "canvas";
 
 export type SpachaOptions = {
     width?: number,
