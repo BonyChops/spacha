@@ -1,6 +1,6 @@
 {
   "name": "spacha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/spacha.node.js",
   "types": "dist/src/index.node.d.ts",
