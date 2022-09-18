@@ -1,15 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES5",
     "module": "CommonJS",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
-    "lib": ["es2018", "DOM"],
-    "types": ["node", "jest"],
+    "lib": [
+      "es2018",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist"
   },
-  "include": ["src", "tests"]
+  "include": [
+    "src",
+    "tests"
+  ]
 }

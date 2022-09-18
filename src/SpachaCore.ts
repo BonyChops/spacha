@@ -9,24 +9,27 @@ export class SpachaCore {
   }
 
   private init = () => {
+    const options = { ...this.options };
     const themeArray = Object.keys(themes).map((key) => ({
       ...themes[key],
       name: key,
     }));
     const randomTheme =
       themeArray[Math.floor(Math.random() * themeArray.length)];
-    this.options.price ??= randomTheme.price;
-    this.options.scale ??= 1.0;
-    this.scale = this.options.scale;
-    //this.options.theme ??= randomTheme.name;
-    this.options.themeOption ??= this.options.theme
-      ? themes[this.options.theme ?? randomTheme.name]
-      : this.themeFromPrice(this.options.price);
-    this.options.user ??= {
+    options.price ??= randomTheme.price;
+    options.scale ??= 1.0;
+    this.scale = options.scale;
+    //options.theme ??= randomTheme.name;
+    options.themeOption ??= options.theme
+      ? themes[options.theme ?? randomTheme.name]
+      : this.themeFromPrice(options.price);
+    options.user ??= {
       name: 'YouTube User',
     };
-    this.options.user.name ??= 'YouTube User';
-    this.options.shaddow ??= true;
+    options.user.name ??= 'YouTube User';
+    options.shaddow ??= true;
+
+    this.options = options;
   };
 
   protected themeFromPrice = (price: number): Theme => {
