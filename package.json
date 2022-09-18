@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/spacha.node.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/src/index.node.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "npx webpack --config webpack.config.js",
@@ -21,12 +21,12 @@
     "url": "git+https://github.com/BonyChops/spacha.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Bony_Chops",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BonyChops/spacha/issues"
   },
-  "homepage": "https://github.com/BonyChops/spacha#readme",
+  "homepage": "https://spacha.b7s.dev",
   "devDependencies": {
     "@jest/types": "^29.0.3",
     "@types/jest": "^29.0.3",
