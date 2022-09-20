@@ -112,7 +112,7 @@ export class SpachaImage extends SpachaCore {
       x + 20 * this.scale,
       y + 32 * this.scale,
       32 * this.scale,
-      (this.options.width ?? 600) - 10,
+      (this.options.width ?? 600) - 20 * 2 * this.scale,
       true
     );
   };
